@@ -37,7 +37,10 @@ def buscar_contacto():
 
     if nombreBuscar in agenda:
 
-        print("¡Sí, este contacto se encuentra en la lista!")
+        print("¡Sí, este contacto se encuentra en la lista! que tiene los siguientes datos: ")
+        for nombre, datos in agenda.items():
+            print(f"{nombre} | Tel: {datos['Telefono']} | Email: {datos['CorreoElectronico']}")
+
     else:
         print("Contacto no encontrado, por favor ingresarlo")
 
@@ -47,7 +50,7 @@ def listar_contactos():
     if not agenda:
         print(" Lo siento contactos no encontrados, favor agregarlos")
     for nombre, datos in agenda.items():
-        print(f"{nombre} - Tel: {datos['Telefono']} | Email: {datos['CorreoElectronico']}")
+        print(f"{nombre} | Tel: {datos['Telefono']} | Email: {datos['CorreoElectronico']}")
 
     
 
@@ -86,10 +89,9 @@ def mostrar_menu():
                 print("Saliendo de la agenda. ¡Hasta luego!")
                 break
             else:
-                print("⚠️ Opción no válida. Intenta de nuevo.")
+                print("⚠️ ERROR Entrada no válida. Ingresa un número del 1 al 5.")
         else:
-            print("⚠️ Entrada no válida. Ingresa un número del 1 al 5.")
-
+            print("⚠️ ERROR. Ingresa solo números.")
 
 mostrar_menu()
 
